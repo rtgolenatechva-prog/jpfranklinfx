@@ -37,9 +37,9 @@ export function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main footer content */}
-        <div className="py-14 grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Brand column */}
-          <div className="flex flex-col gap-5">
+        <div className="py-14 grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Brand column — spans 2 of 4 */}
+          <div className="flex flex-col gap-5 md:col-span-2">
             <LogoMark asLink size="md" />
             <p className="text-sm text-[#a0a0a0] leading-relaxed max-w-xs">
               {SITE_CONFIG.description}

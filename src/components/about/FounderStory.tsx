@@ -5,7 +5,6 @@ import { Rocket, Target, Layers, Shield, Quote } from 'lucide-react'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-import { NeonBadge } from '@/components/ui/NeonBadge'
 import { PHILOSOPHY_PILLARS } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 
@@ -53,43 +52,43 @@ export function FounderStory() {
         </div>
       </ScrollReveal>
 
-      {/* Founder quote */}
+      {/* Founder quote — clean, centered, no top bar */}
       <ScrollReveal delay={0.1}>
         <GlassCard
           accent="emerald"
           padding="lg"
-          className="mb-16 max-w-4xl mx-auto relative"
+          className="mb-16 max-w-3xl mx-auto relative overflow-hidden"
         >
+          {/* Decorative large quote mark — background only */}
           <Quote
-            size={48}
-            className="absolute top-6 right-6 text-emerald-500/10"
+            size={80}
+            className="absolute -top-2 -left-2 text-emerald-500/5"
             aria-hidden="true"
           />
-          <div className="flex flex-col gap-6">
-            <NeonBadge accent="emerald">JP Franklin — Founder</NeonBadge>
-            <blockquote className="text-lg md:text-xl text-[#f0f0f0] leading-relaxed font-medium">
+
+          <div className="flex flex-col items-center gap-8 text-center relative z-10">
+            {/* Quote text */}
+            <blockquote className="text-base md:text-lg text-[#d0d0d0] leading-relaxed font-normal italic">
               &ldquo;I spent years watching businesses drown in repetitive work — the kind
               of work that software should have automated decades ago. When large language
               models reached the capability threshold where autonomous action became
               reliable, I knew the window was open.
-              <br />
-              <br />
+              <br /><br />
               JP Franklin FX&apos;s Agentic AI Division exists for one reason: to take that
               window and build something permanent for our clients before it closes. We
               don&apos;t sell subscriptions to AI tools. We build the systems that run your
               business.&rdquo;
             </blockquote>
 
-            {/* Author */}
-            <div className="flex items-center gap-4 pt-2 border-t border-[#2a2a2a]">
+            {/* Divider */}
+            <div className="w-12 h-px bg-emerald-500/40" />
+
+            {/* Author — centered */}
+            <div className="flex flex-col items-center gap-3">
               <div
-                className="w-12 h-12 rounded-full border-2 border-emerald-500/40 flex items-center justify-center text-xl font-bold"
+                className="w-12 h-12 rounded-full border-2 border-emerald-500/40 bg-[#111111] flex items-center justify-center text-base font-bold"
                 style={{
-                  background: 'linear-gradient(135deg, #10b981, #06b6d4)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  backgroundColor: '#111111',
+                  background: 'linear-gradient(135deg, rgba(16,185,129,0.15), rgba(6,182,212,0.15))',
                 }}
               >
                 <span
@@ -103,7 +102,7 @@ export function FounderStory() {
                   JP
                 </span>
               </div>
-              <div>
+              <div className="flex flex-col items-center gap-0.5">
                 <p className="text-sm font-semibold text-[#f0f0f0]">JP Franklin</p>
                 <p className="text-xs text-[#606060]">
                   Founder & Lead AI Architect, JP Franklin FX
