@@ -67,6 +67,18 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+            {/* Legal links — same column, separated */}
+            <div className="pt-2 border-t border-[#2a2a2a] flex flex-col gap-2.5">
+              {LEGAL_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-[#606060] hover:text-emerald-400 transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Contact */}
@@ -113,22 +125,11 @@ export function Footer() {
         <Separator />
 
         {/* Legal bar */}
-        <div className="py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+        <div className="py-5 text-center">
           <p className="text-xs text-[#606060]">
             &copy; {year} JP Franklin FX &mdash; Agentic AI Division.{' '}
             <span className="whitespace-nowrap">All rights reserved.</span>
           </p>
-          <div className="flex items-center gap-5">
-            {LEGAL_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-xs text-[#606060] hover:text-[#a0a0a0] transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
     </footer>
