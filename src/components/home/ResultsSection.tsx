@@ -5,7 +5,6 @@ import { SectionHeader } from '@/components/ui/SectionHeader'
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter'
 import { GridBackground } from '@/components/ui/GridBackground'
 import { STATS } from '@/lib/constants'
-import { cn } from '@/lib/utils'
 
 export function ResultsSection() {
   return (
@@ -49,13 +48,13 @@ export function ResultsSection() {
         </ScrollReveal>
 
         {/* Stats grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {STATS.map((stat, i) => (
             <ScrollReveal key={i} direction="up" delay={i * 0.1}>
-              <div className="flex flex-col items-center text-center p-6 rounded-xl border border-[#2a2a2a] bg-[#111111]/60">
+              <div className="flex flex-col items-center justify-center text-center p-5 rounded-xl border border-[#2a2a2a] bg-[#111111]/60 h-[160px]">
                 {/* Counter */}
                 <div
-                  className="text-[2.5rem] md:text-[3rem] font-bold leading-none mb-3"
+                  className="text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem] font-bold leading-none mb-2"
                   style={{
                     background: 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)',
                     WebkitBackgroundClip: 'text',
@@ -73,16 +72,9 @@ export function ResultsSection() {
                 </div>
 
                 {/* Label */}
-                <p className="text-sm font-semibold text-[#f0f0f0] mb-1">
+                <p className="text-xs sm:text-sm font-semibold text-[#f0f0f0] leading-snug">
                   {stat.label}
                 </p>
-
-                {/* Description */}
-                {stat.description && (
-                  <p className="text-xs text-[#606060] leading-snug">
-                    {stat.description}
-                  </p>
-                )}
               </div>
             </ScrollReveal>
           ))}
