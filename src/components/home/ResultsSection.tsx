@@ -51,10 +51,10 @@ export function ResultsSection() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {STATS.map((stat, i) => (
             <ScrollReveal key={i} direction="up" delay={i * 0.1}>
-              <div className="flex flex-col items-center justify-center text-center p-5 rounded-xl border border-[#2a2a2a] bg-[#111111]/60 h-[160px]">
-                {/* Counter */}
+              <div className="flex flex-col items-center justify-center text-center p-4 rounded-xl border border-[#2a2a2a] bg-[#111111]/60 h-[140px]">
+                {/* Counter — whitespace-nowrap prevents "30 Days" wrapping */}
                 <div
-                  className="text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem] font-bold leading-none mb-2"
+                  className="text-[1.6rem] sm:text-[2rem] md:text-[2.5rem] font-bold leading-none mb-2 whitespace-nowrap"
                   style={{
                     background: 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)',
                     WebkitBackgroundClip: 'text',
@@ -72,7 +72,7 @@ export function ResultsSection() {
                 </div>
 
                 {/* Label */}
-                <p className="text-xs sm:text-sm font-semibold text-[#f0f0f0] leading-snug">
+                <p className="text-xs font-semibold text-[#f0f0f0] leading-snug px-1">
                   {stat.label}
                 </p>
               </div>
