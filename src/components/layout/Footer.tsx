@@ -113,9 +113,10 @@ export function Footer() {
         <Separator />
 
         {/* Legal bar */}
-        <div className="py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
           <p className="text-xs text-[#606060]">
-            &copy; {year} {SITE_CONFIG.fullName}. All rights reserved.
+            &copy; {year} JP Franklin FX &mdash; Agentic AI Division.{' '}
+            <span className="whitespace-nowrap">All rights reserved.</span>
           </p>
           <div className="flex items-center gap-5">
             {LEGAL_LINKS.map((link) => (
