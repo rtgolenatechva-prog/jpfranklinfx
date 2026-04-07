@@ -55,10 +55,10 @@ export function LogoMark({ size = 'md', showText = true, className, asLink = tru
       {showText && (
         <div className="flex flex-col leading-none">
           <span className={cn('font-bold text-[#f0f0f0] tracking-tight', text)}>
-            JP Franklin <span className="text-emerald-400">FX</span>
+            JP <span className="text-emerald-400">Agentic</span>
           </span>
           <span className={cn('text-[#606060] tracking-widest uppercase font-medium mt-0.5', sub)}>
-            Agentic AI
+            AI Workflow
           </span>
         </div>
       )}
