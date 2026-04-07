@@ -3,6 +3,7 @@ import { HeroSection } from '@/components/home/HeroSection'
 import { TrustBar } from '@/components/home/TrustBar'
 import { ServicesGrid } from '@/components/home/ServicesGrid'
 import { ResultsSection } from '@/components/home/ResultsSection'
+import { HomePricingSection } from '@/components/home/HomePricingSection'
 import { CTASection } from '@/components/home/CTASection'
 import { SITE_CONFIG } from '@/lib/constants'
 
@@ -22,6 +23,7 @@ export default function HomePage() {
       <TrustBar />
       <ServicesGrid />
       <ResultsSection />
+      <HomePricingSection />
       <CTASection />
     </>
   )
