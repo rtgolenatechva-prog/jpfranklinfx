@@ -111,7 +111,7 @@ export async function submitAuditForm(
 
   try {
     const { error } = await resend.emails.send({
-      from: 'JP Franklin FX <onboarding@resend.dev>',
+      from: 'JP Agentic Workflow <onboarding@resend.dev>',
       to: SITE_CONFIG.email,
       replyTo: parsed.data.email,
       subject: `New Audit Request — ${parsed.data.company} (${parsed.data.revenue})`,

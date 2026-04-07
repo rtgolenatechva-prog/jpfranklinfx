@@ -18,7 +18,7 @@ export const SITE_CONFIG = {
     'workflow automation NZ',
   ],
   location: 'Auckland, New Zealand',
-  email: 'hello@jpfranklinfx.co.nz',
+  email: 'info@aiagenticworkflow.ai',
 }
 
 export const NAV_LINKS: NavLink[] = [
