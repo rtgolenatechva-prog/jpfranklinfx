@@ -1,9 +1,9 @@
 import type { NavLink, ServiceItem, StatItem, PricingTier, SuiteFeature } from '@/types'
 
 export const SITE_CONFIG = {
-  name: 'JP Agentic Workflow',
+  name: 'Agentic Workflow',
   division: 'AI Agency',
-  fullName: 'JP Agentic Workflow',
+  fullName: 'Agentic Workflow',
   tagline: "New Zealand's #1 Agentic AI Agency",
   url: 'https://aiagenticworkflow.ai',
   description:
