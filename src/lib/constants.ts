@@ -5,7 +5,7 @@ export const SITE_CONFIG = {
   division: 'AI Agency',
   fullName: 'JP Agentic Workflow',
   tagline: "New Zealand's #1 Agentic AI Agency",
-  url: 'https://jp.aiagenticworkflow.ai',
+  url: 'https://aiagenticworkflow.ai',
   description:
     "We architect and deploy custom AI agent systems that eliminate manual workflows, accelerate revenue cycles, and give your business an unfair competitive advantage — live in 30 days.",
   keywords: [
