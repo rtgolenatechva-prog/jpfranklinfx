@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { AuditForm } from '@/components/audit/AuditForm'
+import { GHLForm } from '@/components/audit/GHLForm'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { GridBackground } from '@/components/ui/GridBackground'
@@ -144,9 +144,9 @@ export default function AuditPage() {
               </GlassCard>
             </div>
 
-            {/* Right: Form */}
+            {/* Right: GHL Form */}
             <div className="lg:col-span-3">
-              <AuditForm />
+              <GHLForm />
             </div>
           </div>
         </div>
