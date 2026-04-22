@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { ghlAddTags, ghlCreateOpportunity, ghlSendSms } from '@/lib/ghl'
 
-const LOCATION_ID = process.env.GHL_LOCATION_ID!
-const WEBHOOK_SECRET = process.env.GHL_WEBHOOK_SECRET
-const PLUMBING_FORM_ID = process.env.GHL_PLUMBING_FORM_ID
-const PIPELINE_ID = process.env.GHL_PIPELINE_ID!
-const STAGE_ID = process.env.GHL_STAGE_ID!
+const LOCATION_ID = process.env.GHL_LOCATION_ID!.trim()
+const WEBHOOK_SECRET = process.env.GHL_WEBHOOK_SECRET?.trim()
+const PLUMBING_FORM_ID = process.env.GHL_PLUMBING_FORM_ID?.trim()
+const PIPELINE_ID = process.env.GHL_PIPELINE_ID!.trim()
+const STAGE_ID = process.env.GHL_STAGE_ID!.trim()
 
 export async function POST(req: NextRequest) {
   // Verify shared secret
