@@ -624,20 +624,25 @@
     /* ── CTA BANNER ─────────────────────────────────────── */
     .cta-wrap {
       position: relative;
-      /* Diagonal top + bottom via clip-path */
-      clip-path: polygon(0 5.5%, 100% 0%, 100% 94.5%, 0 100%);
-      margin: -3.5% 0;
       z-index: 1;
-    }
-    @media (max-width: 639px) {
-      .cta-wrap { clip-path: none; margin: 0; }
     }
 
     .cta-banner {
       background: var(--dark-3);
-      padding: 130px 0;
+      padding: 100px 0;
       position: relative;
       overflow: hidden;
+    }
+
+    /* Diagonal top edge via skewed pseudo-element */
+    .cta-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -32px; left: 0; right: 0;
+      height: 64px;
+      background: var(--dark-3);
+      transform: skewY(-1.2deg);
+      z-index: 2;
     }
 
     /* Central accent glow */
@@ -677,9 +682,9 @@
     /* ── FORM SECTION ───────────────────────────────────── */
     .form-section {
       background: var(--dark);
-      padding: 96px 0;
+      padding: 96px 0 96px;
       position: relative;
-      z-index: 2;
+      z-index: 3;
     }
     #quote-form { scroll-margin-top: 80px; }
 
