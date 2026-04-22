@@ -1,8 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Phone, ArrowDown } from 'lucide-react'
-import { GridBackground } from '@/components/ui/GridBackground'
+import { Phone, ArrowDown, CheckCircle2 } from 'lucide-react'
 
 const container = {
   hidden: { opacity: 0 },
@@ -16,29 +16,20 @@ const item = {
 
 export function PlumbingHero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      <GridBackground opacity={0.35} />
-
-      {/* Blue radial glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse 65% 55% at 50% 30%, rgba(59,130,246,0.10) 0%, transparent 70%)',
-        }}
-        aria-hidden="true"
-      />
-
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+    <section className="relative min-h-screen flex overflow-hidden bg-white">
+      {/* Left — content */}
+      <div className="relative z-10 flex flex-col justify-center w-full lg:w-[58%] px-6 sm:px-10 lg:px-16 xl:px-20 py-20"
+        style={{ background: 'linear-gradient(135deg, #eff6ff 0%, #ffffff 60%)' }}
+      >
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="flex flex-col items-center gap-6"
+          className="flex flex-col gap-6 max-w-xl"
         >
           {/* Urgency badge */}
           <motion.div variants={item}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-500/10 px-3 py-1 text-sm font-medium text-red-400">
+            <span className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3 py-1 text-sm font-medium text-red-600">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
@@ -50,78 +41,58 @@ export function PlumbingHero() {
           {/* Headline */}
           <motion.h1
             variants={item}
-            className="text-[2.4rem] sm:text-[3.2rem] md:text-[4rem] font-bold leading-[1.08] tracking-[-0.03em] text-[#f0f0f0]"
+            className="text-[2.2rem] sm:text-[2.8rem] md:text-[3.4rem] font-extrabold leading-[1.1] tracking-[-0.02em] text-slate-900"
           >
-            Burst Pipe? Blocked Drain?
+            Burst Pipe?{' '}
+            <span className="text-slate-900">Blocked Drain?</span>
             <br />
-            <span
-              style={{
-                background: 'linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-            >
-              We&apos;re On The Way.
-            </span>
+            <span className="text-blue-600">We&apos;re On The Way.</span>
           </motion.h1>
 
-          {/* Phone number — primary CTA */}
+          {/* Phone — primary CTA */}
           <motion.div variants={item}>
             <a
               href="tel:+12184384180"
-              className="group inline-flex items-center gap-3 text-[2.6rem] sm:text-[3.4rem] md:text-[4.2rem] font-black text-white tracking-tight transition-all duration-200 hover:text-blue-300"
-              style={{ textShadow: '0 0 40px rgba(59,130,246,0.25)' }}
+              className="group inline-flex items-center gap-3 text-[2rem] sm:text-[2.6rem] md:text-[3rem] font-black text-slate-900 tracking-tight transition-colors duration-200 hover:text-blue-600"
               aria-label="Call +1 218 438 4180"
             >
-              <Phone
-                size={36}
-                className="text-blue-400 transition-transform duration-200 group-hover:rotate-12 flex-shrink-0"
-              />
+              <span className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 group-hover:bg-blue-500 transition-colors">
+                <Phone size={22} className="text-white transition-transform duration-200 group-hover:rotate-12" />
+              </span>
               +1 (218) 438-4180
             </a>
           </motion.div>
 
           {/* Subheadline */}
-          <motion.p
-            variants={item}
-            className="max-w-xl text-base md:text-lg text-[#a0a0a0] leading-relaxed"
-          >
+          <motion.p variants={item} className="text-base md:text-lg text-slate-500 leading-relaxed">
             AI-powered dispatch connects you instantly to a certified plumber —
             day or night,{' '}
-            <span className="text-[#f0f0f0] font-medium">no hold times, no call centres.</span>
+            <span className="text-slate-700 font-semibold">no hold times, no call centres.</span>
           </motion.p>
 
           {/* CTA buttons */}
-          <motion.div
-            variants={item}
-            className="flex flex-col sm:flex-row items-center gap-3 pt-1"
-          >
+          <motion.div variants={item} className="flex flex-col sm:flex-row items-start gap-3 pt-1">
             <a
               href="tel:+12184384180"
-              className="inline-flex items-center gap-2.5 h-12 px-7 text-base font-semibold rounded-lg bg-blue-500 text-white border border-blue-500 hover:bg-blue-400 transition-all duration-200"
-              style={{ boxShadow: '0 0 20px rgba(59,130,246,0.25)' }}
+              className="inline-flex items-center gap-2.5 h-13 px-7 py-3.5 text-base font-semibold rounded-xl bg-blue-600 text-white hover:bg-blue-500 shadow-lg shadow-blue-200 transition-all duration-200"
             >
               <Phone size={18} />
               Call Now — It&apos;s Free
             </a>
             <a
               href="#quote-form"
-              className="inline-flex items-center gap-2 h-12 px-7 text-base font-semibold rounded-lg bg-transparent text-[#f0f0f0] border border-[#3a3a3a] hover:border-blue-500/50 hover:text-blue-400 transition-all duration-200"
+              className="inline-flex items-center gap-2 h-13 px-7 py-3.5 text-base font-semibold rounded-xl bg-white text-slate-700 border border-slate-200 hover:border-blue-400 hover:text-blue-600 transition-all duration-200"
             >
               Get a Free Quote
               <ArrowDown size={16} />
             </a>
           </motion.div>
 
-          {/* Social proof */}
-          <motion.div
-            variants={item}
-            className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-3"
-          >
+          {/* Trust bullets */}
+          <motion.div variants={item} className="flex flex-wrap gap-x-5 gap-y-2 pt-1">
             {['Same-Day Service', 'Licensed & Insured', 'No Call-Out Fee'].map((text, i) => (
-              <span key={i} className="flex items-center gap-2 text-xs text-[#606060]">
-                <span className="w-1 h-1 rounded-full bg-blue-500" />
+              <span key={i} className="flex items-center gap-1.5 text-sm text-slate-500">
+                <CheckCircle2 size={14} className="text-blue-500 flex-shrink-0" />
                 {text}
               </span>
             ))}
@@ -129,12 +100,40 @@ export function PlumbingHero() {
         </motion.div>
       </div>
 
-      {/* Bottom fade */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-        style={{ background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }}
-        aria-hidden="true"
-      />
+      {/* Right — plumber photo */}
+      <div className="hidden lg:block lg:w-[42%] relative">
+        <Image
+          src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=80"
+          alt="Professional plumber ready to help"
+          fill
+          style={{ objectFit: 'cover', objectPosition: 'center top' }}
+          priority
+        />
+        {/* Blue gradient overlay — blends image into left panel */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(to right, rgba(239,246,255,0.6) 0%, transparent 30%), linear-gradient(to top, rgba(30,64,175,0.15) 0%, transparent 60%)',
+          }}
+          aria-hidden="true"
+        />
+
+        {/* Floating stat card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="absolute bottom-10 left-6 bg-white rounded-2xl shadow-xl px-5 py-4 flex items-center gap-4"
+        >
+          <div className="flex items-center justify-center w-11 h-11 rounded-full bg-blue-600">
+            <Phone size={20} className="text-white" />
+          </div>
+          <div>
+            <p className="text-xs text-slate-400 font-medium uppercase tracking-wide">Response Time</p>
+            <p className="text-lg font-black text-slate-900">Under 15 min</p>
+          </div>
+        </motion.div>
+      </div>
     </section>
   )
 }
