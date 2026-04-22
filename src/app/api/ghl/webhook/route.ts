@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
 
   // 2. Create opportunity in pipeline stage
   const oppRes = await ghlCreateOpportunity({
-    title: `${contactName} — Plumbing Demo`,
+    name: `${contactName} — Plumbing Demo`,
     pipelineId: PIPELINE_ID,
     pipelineStageId: STAGE_ID,
     contactId,

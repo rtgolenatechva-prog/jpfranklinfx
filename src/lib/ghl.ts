@@ -17,7 +17,7 @@ export async function ghlAddTags(contactId: string, tags: string[]) {
 }
 
 export async function ghlCreateOpportunity(payload: {
-  title: string
+  name: string
   pipelineId: string
   pipelineStageId: string
   contactId: string
