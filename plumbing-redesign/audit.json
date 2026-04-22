@@ -1,0 +1,130 @@
+{
+  "source": "src/app/plumbing-demo/page.tsx + src/components/plumbing/PlumbingHero.tsx",
+  "audited_at": "2026-04-22",
+
+  "colors": {
+    "background_primary": "#FFFFFF",
+    "background_secondary": "#F8FAFC",
+    "background_dark": "#0F172A",
+    "background_dark_2": "#1E293B",
+    "accent_primary": "#2563EB",
+    "accent_light": "#60A5FA",
+    "text_primary": "#0F172A",
+    "text_secondary": "#475569",
+    "text_muted": "#94A3B8",
+    "text_on_dark": "#F1F5F9",
+    "border_light": "#F1F5F9",
+    "urgency_red": "#EF4444",
+    "urgency_red_bg": "rgba(239,68,68,0.1)",
+    "star_gold": "#FBBF24",
+    "cta_button": "#2563EB",
+    "cta_text": "#FFFFFF"
+  },
+
+  "typography": {
+    "font_family": "GeistSans (system, via global layout)",
+    "headline_weight": "900 (font-black)",
+    "body_weight": "400–600",
+    "heading_sizes": ["3.8rem hero h1", "3rem section h2 (desktop)", "1rem card h3"],
+    "tracking": "-0.03em hero, tight section headings"
+  },
+
+  "meta": {
+    "title": "Emergency Plumbing — Call Now | Same-Day Service",
+    "description": "AI-powered emergency plumbing dispatch. Burst pipe, blocked drain, hot water system? Call +1 (218) 438-4180 for same-day service — 24/7, no hold times."
+  },
+
+  "sections": [
+    {
+      "id": "hero",
+      "component": "PlumbingHero",
+      "layout": "two-column split: left content, right plumber photo",
+      "badge": "Emergency Line Active • Answers in Seconds",
+      "badge_color": "red (urgency)",
+      "headline": "Plumbing Emergency? We're There Fast.",
+      "headline_accent": "We're There Fast.",
+      "phone": "+1 (218) 438-4180",
+      "phone_href": "tel:+12184384180",
+      "phone_label": "Call 24/7 — Free, No Hold Times",
+      "subheadline": "AI-powered dispatch connects you instantly to a certified plumber — day or night, no hold times, no call centres.",
+      "cta_primary": "Call Now — It's Free",
+      "cta_secondary": "Get a Free Quote",
+      "trust_bullets": ["Same-Day Service", "Licensed & Insured", "No Call-Out Fee"],
+      "float_cards": [
+        { "type": "stars", "text": "5-Star Rated Service", "position": "top-right" },
+        { "type": "response_time", "text": "Under 15 min", "label": "Response Time", "position": "bottom-left" }
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80",
+        "alt": "Professional plumber ready to help"
+      }
+    },
+    {
+      "id": "stats_strip",
+      "background": "#0F172A (dark)",
+      "stats": [
+        { "value": "2,400+", "label": "Jobs Completed" },
+        { "value": "<15 min", "label": "Avg. Response" },
+        { "value": "12 yrs", "label": "In Business" },
+        { "value": "4.9 / 5", "label": "Customer Rating" }
+      ]
+    },
+    {
+      "id": "services",
+      "background": "#F8FAFC (light)",
+      "section_label": "What We Fix",
+      "headline": "Every Plumbing Problem, Solved Same Day.",
+      "layout": "3-column grid",
+      "cards": [
+        { "num": "01", "icon": "alert-triangle", "title": "Emergency Leak Repair", "description": "Rapid response for burst pipes, slab leaks, and active water damage. We stop the damage fast." },
+        { "num": "02", "icon": "waves", "title": "Blocked Drains", "description": "High-pressure jet cleaning and CCTV drain inspection to clear even the toughest blockages." },
+        { "num": "03", "icon": "thermometer", "title": "Hot Water Systems", "description": "Repair, replacement, and installation of all hot water systems — gas, electric, and heat pump." },
+        { "num": "04", "icon": "zap", "title": "Burst Pipes", "description": "Emergency pipe repair and replacement. We locate and fix burst pipes with minimal disruption." },
+        { "num": "05", "icon": "flame", "title": "Gas Fitting", "description": "Licensed gas fitting for installations, repairs, and safety checks on all gas appliances." },
+        { "num": "06", "icon": "shield-check", "title": "Preventive Maintenance", "description": "Annual inspections and maintenance plans to prevent costly emergencies before they happen." }
+      ]
+    },
+    {
+      "id": "trust_bar",
+      "background": "#2563EB (blue-600)",
+      "items": ["Licensed & Insured", "24/7 Emergency", "Same-Day Booking", "5-Star Rated", "AI-Powered Dispatch"]
+    },
+    {
+      "id": "cta_banner",
+      "background": "#0F172A (dark)",
+      "label": "Emergency? Don't Wait",
+      "headline": "A Plumber On The Way.",
+      "subtext": "Our AI dispatch system ensures zero wait time. Call now and a certified local plumber is on their way — guaranteed.",
+      "cta_primary": "+1 (218) 438-4180",
+      "cta_secondary": "Get a Free Quote"
+    },
+    {
+      "id": "form_section",
+      "anchor": "quote-form",
+      "label": "Free Quote",
+      "headline": "Get a Free Quote in Minutes",
+      "layout": "2-col: left steps + right GHL form",
+      "steps": [
+        "AI agent answers immediately — no hold times",
+        "Describe your emergency or plumbing issue",
+        "Provide your address for dispatch",
+        "Certified plumber confirms ETA within minutes"
+      ],
+      "phone_card_label": "Prefer to Call Directly?",
+      "ghl_form": {
+        "form_id": "XOr0eWukDIWa4yZsXuPn",
+        "iframe_src": "https://links.aiagenticworkflow.ai/widget/form/XOr0eWukDIWa4yZsXuPn",
+        "embed_script": "https://links.aiagenticworkflow.ai/js/form_embed.js"
+      }
+    },
+    {
+      "id": "footer",
+      "background": "#0F172A",
+      "text": "© {year} Agentic Workflow AI • Demo plumbing funnel powered by GHL Voice AI"
+    }
+  ],
+
+  "icons_library": "Lucide React",
+  "animation_library": "Framer Motion (Next.js version)",
+  "scroll_reveal_component": "ScrollReveal (custom, src/components/ui/ScrollReveal)"
+}

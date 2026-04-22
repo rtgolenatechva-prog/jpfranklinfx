@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Plumbing — Call Now | Same-Day Service</title>
+  <meta name="description" content="AI-powered emergency plumbing dispatch. Burst pipe, blocked drain, hot water system? Call +1 (218) 438-4180 for same-day service — 24/7, no hold times.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* ── Extracted palette ── */
+      --dark:           #0F172A;   /* slate-900  */
+      --dark-2:         #1E293B;   /* slate-800  */
+      --dark-3:         #080E1C;   /* slate-900 darkened ~12% */
+      --light:          #F8FAFC;   /* slate-50   */
+      --white:          #FFFFFF;
+      --accent:         #2563EB;   /* blue-600   */
+      --accent-hover:   #1D4ED8;   /* blue-700   */
+      --accent-light:   #60A5FA;   /* blue-400   */
+      --accent-dim:     rgba(37, 99, 235, 0.12);
+      --accent-glow:    rgba(37, 99, 235, 0.30);
+      --accent-border:  rgba(37, 99, 235, 0.35);
+      --red:            #EF4444;
+      --red-dim:        rgba(239, 68, 68, 0.12);
+      --red-border:     rgba(239, 68, 68, 0.30);
+      --gold:           #FBBF24;
+      --text-on-dark:   #F1F5F9;
+      --text-muted:     #94A3B8;
+      --text-mid:       #475569;
+      --border-dark:    rgba(255, 255, 255, 0.07);
+      /* ── Fonts ── */
+      --font-display:   'Bebas Neue', sans-serif;
+      --font-body:      'DM Sans', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--dark);
+      color: var(--text-on-dark);
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { text-decoration: none; }
+
+    /* ── CONTAINER ─────────────────────────────────────── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    @media (min-width: 768px)  { .container { padding: 0 40px; } }
+    @media (min-width: 1200px) { .container { padding: 0 56px; } }
+
+    /* ── NOISE TEXTURE (dark sections) ─────────────────── */
+    .noise-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.025;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ── SHARED LABEL TAG ───────────────────────────────── */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-border);
+      border-radius: 3px;
+      padding: 5px 11px;
+    }
+
+    /* ── BUTTONS ────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.18s ease, transform 0.15s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      white-space: nowrap;
+      border: none;
+    }
+
+    .btn-primary {
+      font-size: 15px;
+      padding: 14px 28px;
+      color: var(--white);
+      background: var(--accent);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 0 28px var(--accent-glow), 0 6px 20px rgba(0,0,0,0.35);
+    }
+    .btn-primary.lg {
+      font-size: 17px;
+      padding: 17px 36px;
+    }
+
+    .btn-ghost {
+      font-size: 15px;
+      padding: 13px 24px;
+      color: var(--text-on-dark);
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+    }
+    .btn-ghost.lg {
+      font-size: 17px;
+      padding: 16px 32px;
+    }
+
+    /* ── STICKY HEADER ──────────────────────────────────── */
+    .hdr {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 40px;
+      background: rgba(15, 23, 42, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-dark);
+      transition: background 0.3s ease;
+    }
+
+    .hdr-logo {
+      font-family: var(--font-display);
+      font-size: 21px;
+      letter-spacing: 0.06em;
+      color: var(--white);
+    }
+    .hdr-logo span { color: var(--accent); }
+
+    /* Animated underline drawn on load */
+    .hdr-line {
+      position: absolute;
+      bottom: 0; left: 0;
+      height: 1px;
+      width: 0;
+      background: linear-gradient(to right, var(--accent), transparent);
+      animation: draw-line 1.4s cubic-bezier(0.4,0,0.2,1) 0.3s forwards;
+    }
+    @keyframes draw-line {
+      to { width: 100%; }
+    }
+
+    .hdr-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--accent);
+      border-radius: 4px;
+      padding: 9px 18px;
+      transition: background 0.18s ease, box-shadow 0.18s ease;
+    }
+    .hdr-phone:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+    .hdr-phone svg { width: 15px; height: 15px; }
+
+    /* ── HERO ───────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (min-width: 1024px) {
+      .hero { grid-template-columns: 54% 46%; }
+    }
+
+    /* Left panel */
+    .hero-l {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 32px 80px;
+      background: var(--dark);
+    }
+    @media (min-width: 768px)  { .hero-l { padding: 130px 52px 80px; } }
+    @media (min-width: 1024px) { .hero-l { padding: 140px 52px 80px 72px; } }
+
+    /* Radial blue glow — top left corner */
+    .hero-l::before {
+      content: '';
+      position: absolute;
+      top: -5%; left: -5%;
+      width: 55%; height: 55%;
+      background: radial-gradient(ellipse at top left, rgba(37,99,235,0.1) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 560px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    /* Staggered fade-up on load */
+    .hero-content > * {
+      animation: fade-up 0.6s cubic-bezier(0.25,0.1,0.25,1) both;
+      opacity: 0;
+    }
+    .hero-content > *:nth-child(1) { animation-delay: 0.08s; }
+    .hero-content > *:nth-child(2) { animation-delay: 0.18s; }
+    .hero-content > *:nth-child(3) { animation-delay: 0.28s; }
+    .hero-content > *:nth-child(4) { animation-delay: 0.38s; }
+    .hero-content > *:nth-child(5) { animation-delay: 0.48s; }
+    .hero-content > *:nth-child(6) { animation-delay: 0.58s; }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0);    }
+    }
+
+    /* Emergency badge */
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #FCA5A5;
+      background: var(--red-dim);
+      border: 1px solid var(--red-border);
+      border-radius: 3px;
+      padding: 8px 14px;
+      width: fit-content;
+    }
+    .pulse-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      position: relative;
+      flex-shrink: 0;
+    }
+    .pulse-dot::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: rgba(239,68,68,0.5);
+      animation: pulse 1.8s ease-out infinite;
+    }
+    @keyframes pulse {
+      0%   { transform: scale(0.4); opacity: 1; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    /* Main headline in Bebas Neue */
+    .hero-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(54px, 8.5vw, 98px);
+      line-height: 0.93;
+      letter-spacing: 0.025em;
+      color: var(--white);
+    }
+    .hero-h1 .blue { color: var(--accent); }
+
+    /* Phone block */
+    .hero-phone-wrap { display: flex; flex-direction: column; gap: 6px; }
+    .hero-phone-lbl {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .hero-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: clamp(26px, 4vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      transition: color 0.18s ease;
+    }
+    .hero-phone:hover { color: var(--accent-light); }
+    .phone-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px; height: 52px;
+      background: var(--accent);
+      border-radius: 4px;
+      flex-shrink: 0;
+      transition: background 0.18s ease, box-shadow 0.18s ease;
+    }
+    .hero-phone:hover .phone-icon {
+      background: var(--accent-hover);
+      box-shadow: 0 0 24px var(--accent-glow);
+    }
+    .phone-icon svg { width: 22px; height: 22px; }
+
+    /* Subheadline */
+    .hero-sub {
+      font-size: 17px;
+      line-height: 1.68;
+      color: var(--text-muted);
+      max-width: 470px;
+    }
+    .hero-sub strong { color: var(--text-on-dark); font-weight: 600; }
+
+    /* CTA row */
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    /* Trust bullets */
+    .hero-trust { display: flex; flex-wrap: wrap; gap: 18px; }
+    .trust-bullet {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .trust-bullet svg { color: var(--accent-light); width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* Right panel — plumber photo */
+    .hero-r {
+      position: relative;
+      overflow: hidden;
+      min-height: 50vw;
+      display: none;
+    }
+    @media (min-width: 1024px) { .hero-r { display: block; } }
+
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      clip-path: polygon(9% 0%, 100% 0%, 100% 100%, 0% 100%);
+      filter: brightness(0.92);
+    }
+
+    .hero-r-overlay {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to right,  rgba(15,23,42,0.65) 0%, transparent 30%),
+        linear-gradient(to top,    rgba(15,23,42,0.75) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    /* Floating stat cards on photo */
+    .float-card {
+      position: absolute;
+      background: rgba(10, 14, 26, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 16px 22px;
+    }
+    .float-card.top-r {
+      top: 9%; right: 7%;
+      animation: float-in-top 0.55s cubic-bezier(0.25,0.1,0.25,1) 0.9s both;
+    }
+    .float-card.bot-l {
+      bottom: 9%; left: 9%;
+      display: flex; align-items: center; gap: 14px;
+      animation: float-in-bot 0.55s cubic-bezier(0.25,0.1,0.25,1) 1.1s both;
+    }
+    @keyframes float-in-top {
+      from { opacity: 0; transform: translateY(-14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float-in-bot {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .stars-row { display: flex; gap: 3px; margin-bottom: 5px; }
+    .star { width: 15px; height: 15px; fill: var(--gold); color: var(--gold); }
+    .fc-label {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .fc-icon-wrap {
+      display: flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px;
+      background: var(--accent);
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+    .fc-icon-wrap svg { width: 20px; height: 20px; color: var(--white); }
+    .fc-value { font-size: 20px; font-weight: 800; color: var(--white); line-height: 1.2; }
+
+    /* ── STATS BAR ──────────────────────────────────────── */
+    .stats-bar {
+      background: var(--dark-3);
+      border-top:    1px solid var(--accent-border);
+      border-bottom: 1px solid var(--accent-border);
+      padding: 40px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle glow behind stats */
+    .stats-bar::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 200px;
+      background: radial-gradient(ellipse, rgba(37,99,235,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      position: relative;
+      z-index: 2;
+    }
+    @media (min-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+      }
+      .stat-item + .stat-item { border-left: 1px solid rgba(255,255,255,0.07); }
+    }
+
+    .stat-item { text-align: center; padding: 0 20px; }
+
+    .stat-val {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 5vw, 56px);
+      letter-spacing: 0.03em;
+      color: var(--white);
+      line-height: 1;
+      display: block;
+    }
+
+    .stat-lbl {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ── SERVICES ───────────────────────────────────────── */
+    .services {
+      background: var(--dark);
+      padding: 96px 0 80px;
+      position: relative;
+    }
+
+    .section-hdr { text-align: center; margin-bottom: 60px; }
+    .section-hdr .tag { margin-bottom: 18px; }
+
+    .section-h2 {
+      font-family: var(--font-display);
+      font-size: clamp(34px, 5.5vw, 66px);
+      line-height: 0.97;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      margin-top: 14px;
+    }
+    .section-h2 .blue { color: var(--accent); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    @media (min-width: 640px)  { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    /* Individual service card */
+    .svc-card {
+      position: relative;
+      background: var(--dark-2);
+      border: 1px solid var(--border-dark);
+      border-radius: 6px;
+      padding: 32px 28px;
+      overflow: hidden;
+      /* initial reveal state */
+      opacity: 0;
+      transform: translateY(22px);
+      transition:
+        opacity   0.5s ease,
+        transform 0.5s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+    }
+    .svc-card.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .svc-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(37,99,235,0.4);
+      box-shadow:
+        0 24px 48px rgba(0,0,0,0.45),
+        0 0 0 1px rgba(37,99,235,0.2),
+        0 0 40px rgba(37,99,235,0.08);
+    }
+
+    /* Ghost number */
+    .ghost-num {
+      position: absolute;
+      top: -12px; right: 16px;
+      font-family: var(--font-display);
+      font-size: 100px;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      color: rgba(255,255,255,0.035);
+      user-select: none;
+      pointer-events: none;
+      transition: color 0.22s ease;
+    }
+    .svc-card:hover .ghost-num { color: rgba(37,99,235,0.07); }
+
+    .svc-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px; height: 48px;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-border);
+      border-radius: 6px;
+      margin-bottom: 20px;
+      transition: background 0.22s ease, border-color 0.22s ease;
+    }
+    .svc-icon svg { width: 22px; height: 22px; color: var(--accent-light); transition: color 0.22s ease; }
+    .svc-card:hover .svc-icon { background: var(--accent); border-color: var(--accent); }
+    .svc-card:hover .svc-icon svg { color: var(--white); }
+
+    .svc-title {
+      font-size: 16px; font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .svc-desc {
+      font-size: 14px; line-height: 1.72;
+      color: var(--text-muted);
+    }
+
+    /* ── TRUST BAR ──────────────────────────────────────── */
+    .trust-bar {
+      background: var(--accent);
+      padding: 18px 0;
+    }
+    .trust-items {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      padding: 10px 26px;
+      border-right: 1px solid rgba(255,255,255,0.22);
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-item-icon {
+      display: flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+    }
+    .trust-item-icon svg { width: 13px; height: 13px; color: var(--white); }
+
+    @media (max-width: 639px) {
+      .trust-items { flex-direction: column; gap: 0; }
+      .trust-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); width: 100%; justify-content: center; }
+      .trust-item:last-child { border-bottom: none; }
+    }
+
+    /* ── CTA BANNER ─────────────────────────────────────── */
+    .cta-wrap {
+      position: relative;
+      /* Diagonal top + bottom via clip-path */
+      clip-path: polygon(0 5.5%, 100% 0%, 100% 94.5%, 0 100%);
+      margin: -3.5% 0;
+      z-index: 1;
+    }
+    @media (max-width: 639px) {
+      .cta-wrap { clip-path: none; margin: 0; }
+    }
+
+    .cta-banner {
+      background: var(--dark-3);
+      padding: 130px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Central accent glow */
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 380px;
+      background: radial-gradient(ellipse, rgba(37,99,235,0.13) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-inner { text-align: center; position: relative; z-index: 2; }
+    .cta-inner .tag { margin-bottom: 18px; }
+
+    .cta-h2 {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 9vw, 100px);
+      line-height: 0.93;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      margin-top: 14px;
+      margin-bottom: 22px;
+    }
+    .cta-h2 .blue { color: var(--accent-light); }
+
+    .cta-sub {
+      font-size: 18px; line-height: 1.65;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 0 auto 44px;
+    }
+
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+
+    /* ── FORM SECTION ───────────────────────────────────── */
+    .form-section {
+      background: var(--dark);
+      padding: 96px 0;
+      position: relative;
+      z-index: 2;
+    }
+    #quote-form { scroll-margin-top: 80px; }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+    @media (min-width: 1024px) {
+      .form-grid { grid-template-columns: 2fr 3fr; gap: 52px; }
+    }
+
+    .form-left { display: flex; flex-direction: column; gap: 18px; }
+
+    .steps-card,
+    .phone-card {
+      background: var(--dark-2);
+      border: 1px solid var(--border-dark);
+      border-radius: 6px;
+    }
+    .steps-card { padding: 32px; }
+    .phone-card  { padding: 28px 32px; }
+
+    .card-lbl {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+
+    .steps-list { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+
+    .step-item { display: flex; align-items: flex-start; gap: 14px; }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 32px; height: 32px;
+      background: var(--accent);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 16px;
+      letter-spacing: 0.02em;
+      color: var(--white);
+    }
+
+    .step-txt {
+      font-size: 14px; line-height: 1.65;
+      color: var(--text-muted);
+      padding-top: 5px;
+    }
+
+    .phone-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--white);
+      transition: color 0.18s ease;
+    }
+    .phone-link:hover { color: var(--accent-light); }
+    .phone-link svg { width: 20px; height: 20px; color: var(--accent-light); }
+
+    .phone-note {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+    .phone-note svg { width: 12px; height: 12px; color: var(--accent-light); }
+
+    .form-iframe-wrap {
+      background: var(--dark-2);
+      border: 1px solid var(--border-dark);
+      border-radius: 6px;
+      overflow: hidden;
+      min-height: 640px;
+    }
+    .form-iframe-wrap iframe {
+      width: 100%;
+      min-height: 640px;
+      border: none;
+      display: block;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────── */
+    .footer {
+      background: var(--dark-3);
+      border-top: 1px solid var(--accent-border);
+      padding: 28px 0;
+      text-align: center;
+    }
+    .footer p {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SCROLL REVEAL ──────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════════════════════ -->
+  <header class="hdr" id="site-header">
+    <span class="hdr-logo">EXPERT<span>PLUMB</span></span>
+    <a href="tel:+12184384180" class="hdr-phone">
+      <i data-lucide="phone"></i>
+      +1 (218) 438-4180
+    </a>
+    <div class="hdr-line"></div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════════════ -->
+  <section class="hero noise-bg">
+
+    <!-- Left content panel -->
+    <div class="hero-l">
+      <div class="hero-content">
+
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          Emergency Line Active &bull; Answers in Seconds
+        </div>
+
+        <h1 class="hero-h1">
+          PLUMBING<br>
+          EMERGENCY?<br>
+          <span class="blue">WE'RE THERE FAST.</span>
+        </h1>
+
+        <div class="hero-phone-wrap">
+          <span class="hero-phone-lbl">Call 24/7 — Free, No Hold Times</span>
+          <a href="tel:+12184384180" class="hero-phone">
+            <span class="phone-icon">
+              <i data-lucide="phone" style="color:white;"></i>
+            </span>
+            +1 (218) 438-4180
+          </a>
+        </div>
+
+        <p class="hero-sub">
+          AI-powered dispatch connects you instantly to a certified plumber —
+          day or night, <strong>no hold times, no call centres.</strong>
+        </p>
+
+        <div class="hero-ctas">
+          <a href="tel:+12184384180" class="btn btn-primary">
+            <i data-lucide="phone"></i>
+            Call Now — It's Free
+          </a>
+          <a href="#quote-form" class="btn btn-ghost">
+            Get a Free Quote
+            <i data-lucide="arrow-down"></i>
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <span class="trust-bullet">
+            <i data-lucide="check-circle-2"></i>
+            Same-Day Service
+          </span>
+          <span class="trust-bullet">
+            <i data-lucide="check-circle-2"></i>
+            Licensed &amp; Insured
+          </span>
+          <span class="trust-bullet">
+            <i data-lucide="check-circle-2"></i>
+            No Call-Out Fee
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right photo panel -->
+    <div class="hero-r">
+      <img
+        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
+        alt="Professional plumber ready to help"
+        class="hero-photo"
+      >
+      <div class="hero-r-overlay"></div>
+
+      <!-- Floating: stars -->
+      <div class="float-card top-r">
+        <div class="stars-row">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.56l-6.18 3.46L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.56l-6.18 3.46L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.56l-6.18 3.46L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.56l-6.18 3.46L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.56l-6.18 3.46L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <span class="fc-label">5-Star Rated Service</span>
+      </div>
+
+      <!-- Floating: response time -->
+      <div class="float-card bot-l">
+        <div class="fc-icon-wrap">
+          <i data-lucide="clock"></i>
+        </div>
+        <div>
+          <div class="fc-label">Response Time</div>
+          <div class="fc-value">Under 15 min</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       STATS BAR
+  ══════════════════════════════════════════════════════ -->
+  <section class="stats-bar" id="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+
+        <div class="stat-item">
+          <span class="stat-val" data-target="2400" data-suffix="+">2,400+</span>
+          <span class="stat-lbl">Jobs Completed</span>
+        </div>
+
+        <div class="stat-item">
+          <span class="stat-val" data-prefix="&lt;" data-target="15" data-suffix=" min">&lt;15 min</span>
+          <span class="stat-lbl">Avg. Response</span>
+        </div>
+
+        <div class="stat-item">
+          <span class="stat-val" data-target="12" data-suffix=" yrs">12 yrs</span>
+          <span class="stat-lbl">In Business</span>
+        </div>
+
+        <div class="stat-item">
+          <span class="stat-val" data-target="49" data-decimal="true" data-suffix=" / 5">4.9 / 5</span>
+          <span class="stat-lbl">Customer Rating</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SERVICES
+  ══════════════════════════════════════════════════════ -->
+  <section class="services">
+    <div class="container">
+
+      <div class="section-hdr reveal">
+        <span class="tag">
+          <i data-lucide="wrench" style="width:11px;height:11px;"></i>
+          What We Fix
+        </span>
+        <h2 class="section-h2">
+          EVERY PLUMBING PROBLEM,<br>
+          <span class="blue">SOLVED SAME DAY.</span>
+        </h2>
+      </div>
+
+      <div class="services-grid" id="svc-grid">
+
+        <div class="svc-card">
+          <span class="ghost-num" aria-hidden="true">01</span>
+          <div class="svc-icon"><i data-lucide="alert-triangle"></i></div>
+          <h3 class="svc-title">Emergency Leak Repair</h3>
+          <p class="svc-desc">Rapid response for burst pipes, slab leaks, and active water damage. We stop the damage fast.</p>
+        </div>
+
+        <div class="svc-card">
+          <span class="ghost-num" aria-hidden="true">02</span>
+          <div class="svc-icon"><i data-lucide="waves"></i></div>
+          <h3 class="svc-title">Blocked Drains</h3>
+          <p class="svc-desc">High-pressure jet cleaning and CCTV drain inspection to clear even the toughest blockages.</p>
+        </div>
+
+        <div class="svc-card">
+          <span class="ghost-num" aria-hidden="true">03</span>
+          <div class="svc-icon"><i data-lucide="thermometer"></i></div>
+          <h3 class="svc-title">Hot Water Systems</h3>
+          <p class="svc-desc">Repair, replacement, and installation of all hot water systems — gas, electric, and heat pump.</p>
+        </div>
+
+        <div class="svc-card">
+          <span class="ghost-num" aria-hidden="true">04</span>
+          <div class="svc-icon"><i data-lucide="zap"></i></div>
+          <h3 class="svc-title">Burst Pipes</h3>
+          <p class="svc-desc">Emergency pipe repair and replacement. We locate and fix burst pipes with minimal disruption.</p>
+        </div>
+
+        <div class="svc-card">
+          <span class="ghost-num" aria-hidden="true">05</span>
+          <div class="svc-icon"><i data-lucide="flame"></i></div>
+          <h3 class="svc-title">Gas Fitting</h3>
+          <p class="svc-desc">Licensed gas fitting for installations, repairs, and safety checks on all gas appliances.</p>
+        </div>
+
+        <div class="svc-card">
+          <span class="ghost-num" aria-hidden="true">06</span>
+          <div class="svc-icon"><i data-lucide="shield-check"></i></div>
+          <h3 class="svc-title">Preventive Maintenance</h3>
+          <p class="svc-desc">Annual inspections and maintenance plans to prevent costly emergencies before they happen.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       TRUST BAR
+  ══════════════════════════════════════════════════════ -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-items">
+        <div class="trust-item">
+          <div class="trust-item-icon"><i data-lucide="shield"></i></div>
+          Licensed &amp; Insured
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-icon"><i data-lucide="clock"></i></div>
+          24/7 Emergency
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-icon"><i data-lucide="calendar-check"></i></div>
+          Same-Day Booking
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-icon"><i data-lucide="star"></i></div>
+          5-Star Rated
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-icon"><i data-lucide="bot"></i></div>
+          AI-Powered Dispatch
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       CTA BANNER (diagonal section)
+  ══════════════════════════════════════════════════════ -->
+  <div class="cta-wrap">
+    <section class="cta-banner noise-bg">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <span class="tag">Emergency? Don't Wait</span>
+          <h2 class="cta-h2">
+            A PLUMBER<br>
+            <span class="blue">ON THE WAY.</span>
+          </h2>
+          <p class="cta-sub">
+            Our AI dispatch system ensures zero wait time. Call now and a certified local plumber is dispatched immediately — guaranteed.
+          </p>
+          <div class="cta-actions">
+            <a href="tel:+12184384180" class="btn btn-primary lg">
+              <i data-lucide="phone"></i>
+              +1 (218) 438-4180
+            </a>
+            <a href="#quote-form" class="btn btn-ghost lg">
+              Get a Free Quote
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       FORM SECTION
+  ══════════════════════════════════════════════════════ -->
+  <section class="form-section" id="quote-form">
+    <div class="container">
+
+      <div class="section-hdr reveal" style="margin-bottom:48px;">
+        <span class="tag">Free Quote</span>
+        <h2 class="section-h2" style="margin-top:14px;">
+          GET A <span class="blue">FREE QUOTE</span><br>IN MINUTES
+        </h2>
+      </div>
+
+      <div class="form-grid">
+
+        <!-- Left: steps + phone -->
+        <div class="form-left reveal">
+
+          <div class="steps-card">
+            <p class="card-lbl">What Happens When You Call</p>
+            <ul class="steps-list">
+              <li class="step-item">
+                <span class="step-num">01</span>
+                <span class="step-txt">AI agent answers immediately — no hold times</span>
+              </li>
+              <li class="step-item">
+                <span class="step-num">02</span>
+                <span class="step-txt">Describe your emergency or plumbing issue</span>
+              </li>
+              <li class="step-item">
+                <span class="step-num">03</span>
+                <span class="step-txt">Provide your address for dispatch</span>
+              </li>
+              <li class="step-item">
+                <span class="step-num">04</span>
+                <span class="step-txt">Certified plumber confirms ETA within minutes</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="phone-card">
+            <p class="card-lbl">Prefer to Call Directly?</p>
+            <a href="tel:+12184384180" class="phone-link">
+              <i data-lucide="phone"></i>
+              +1 (218) 438-4180
+            </a>
+            <div class="phone-note">
+              <i data-lucide="check-circle-2"></i>
+              Available 24/7 — no wait times
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: GHL embed form -->
+        <div class="form-iframe-wrap reveal reveal-d1">
+          <iframe
+            src="https://links.aiagenticworkflow.ai/widget/form/XOr0eWukDIWa4yZsXuPn"
+            id="inline-XOr0eWukDIWa4yZsXuPn"
+            data-layout='{"id":"INLINE"}'
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Plumbing Demo Lead Form"
+            data-height="640"
+            data-layout-iframe-id="inline-XOr0eWukDIWa4yZsXuPn"
+            data-form-id="XOr0eWukDIWa4yZsXuPn"
+            title="Plumbing Demo Lead Form"
+            loading="lazy"
+            style="height:640px;"
+          ></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="yr"></span> Agentic Workflow AI &bull; Demo plumbing funnel powered by GHL Voice AI</p>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════════════════════ -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://links.aiagenticworkflow.ai/js/form_embed.js" defer></script>
+
+  <script>
+    /* ── Init icons ──────────────────────────────────── */
+    lucide.createIcons();
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    /* ── Header opacity on scroll ────────────────────── */
+    const hdr = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      hdr.style.background = window.scrollY > 60
+        ? 'rgba(15,23,42,0.97)'
+        : 'rgba(15,23,42,0.82)';
+    }, { passive: true });
+
+    /* ── Easing helper ───────────────────────────────── */
+    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+    /* ── Counter animation ───────────────────────────── */
+    function runCounter(el) {
+      const raw     = parseInt(el.dataset.target, 10);
+      const suffix  = el.dataset.suffix  || '';
+      const prefix  = el.dataset.prefix  || '';
+      const decimal = el.dataset.decimal === 'true';
+      const duration = 1600;
+      const t0 = performance.now();
+
+      (function tick(now) {
+        const p   = Math.min((now - t0) / duration, 1);
+        const val = decimal
+          ? (raw / 10 * easeOutCubic(p)).toFixed(1)
+          : Math.round(raw * easeOutCubic(p)).toLocaleString();
+        el.textContent = prefix + val + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = prefix + (decimal ? (raw/10).toFixed(1) : raw.toLocaleString()) + suffix;
+      })(t0);
+    }
+
+    /* ── Intersection: stat counters ─────────────────── */
+    new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.querySelectorAll('[data-target]').forEach(runCounter);
+        obs.unobserve(e.target);
+      });
+    }, { threshold: 0.4 }).observe(document.getElementById('stats-section'));
+
+    /* ── Intersection: service cards stagger ─────────── */
+    new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.querySelectorAll('.svc-card').forEach((card, i) => {
+          setTimeout(() => card.classList.add('in'), i * 75);
+        });
+        obs.unobserve(e.target);
+      });
+    }, { threshold: 0.08 }).observe(document.getElementById('svc-grid'));
+
+    /* ── Intersection: generic .reveal ───────────────── */
+    const revealObs = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('in');
+        obs.unobserve(e.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -32px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    /* ── Magnetic hover on buttons ───────────────────── */
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('mousemove', e => {
+        const r  = btn.getBoundingClientRect();
+        const dx = (e.clientX - r.left - r.width  / 2) * 0.14;
+        const dy = (e.clientY - r.top  - r.height / 2) * 0.14;
+        btn.style.transform = `translate(${dx}px,${dy}px)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
+    });
+  </script>
+
+</body>
+</html>
