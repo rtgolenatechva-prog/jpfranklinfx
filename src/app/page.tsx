@@ -10,7 +10,7 @@ import { SITE_CONFIG } from '@/lib/constants'
 export const metadata: Metadata = {
   title: `${SITE_CONFIG.fullName} | NZ AI Agency`,
   description:
-    "New Zealand's #1 Agentic AI Agency. We deploy autonomous AI agent systems that eliminate manual workflows, scale revenue, and give your business an unfair competitive advantage — live in 30 days.",
+    "AgenticAI CRM & AI Receptionist for plumbers, HVAC, and roofing businesses. Automate lead capture, inbound calls, and booking. Stop missing customers — 5-day free trial.",
   alternates: {
     canonical: SITE_CONFIG.url,
   },

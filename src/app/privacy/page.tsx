@@ -5,7 +5,7 @@ import { SITE_CONFIG } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'How JP Franklin FX – Agentic AI Division collects, uses, and protects your personal information. NZ Privacy Act 2020 compliant.',
+  description: 'How Agentic Workflow collects, uses, and protects your personal information. NZ Privacy Act 2020 compliant.',
   alternates: {
     canonical: `${SITE_CONFIG.url}/privacy`,
   },
@@ -17,7 +17,7 @@ const sections = [
   {
     id: 'overview',
     title: '1. Overview',
-    content: `JP Franklin FX – Agentic AI Division ("we", "our", "us") is committed to protecting your personal information in accordance with the New Zealand Privacy Act 2020. This Privacy Policy explains how we collect, use, store, and share information when you interact with our website at jpfranklinfx.co.nz and any services we provide.
+    content: `Agentic Workflow ("we", "our", "us") is committed to protecting your personal information in accordance with the New Zealand Privacy Act 2020. This Privacy Policy explains how we collect, use, store, and share information when you interact with our website at aiagenticworkflow.ai and any services we provide.
 
 By using our website or engaging our services, you agree to the terms of this Privacy Policy. If you do not agree, please discontinue use of our website.`,
   },
@@ -118,7 +118,7 @@ No method of transmission over the internet is 100% secure. While we strive to p
 - **Portability:** Request your data in a commonly used, machine-readable format
 - **Opt-out:** Unsubscribe from any communications at any time
 
-To exercise any of these rights, email us at hello@jpfranklinfx.co.nz with the subject line "Privacy Request". We will respond within 20 working days as required by the Privacy Act 2020.
+To exercise any of these rights, email us at hello@aiagenticworkflow.ai with the subject line "Privacy Request". We will respond within 20 working days as required by the Privacy Act 2020.
 
 If you are not satisfied with our response, you may contact the Office of the Privacy Commissioner at www.privacy.org.nz.`,
   },
@@ -139,8 +139,8 @@ We encourage you to review this page periodically. Continued use of our website 
     title: '12. Contact Us',
     content: `If you have questions, concerns, or requests relating to this Privacy Policy, please contact us:
 
-**JP Franklin FX – Agentic AI Division**
-Email: hello@jpfranklinfx.co.nz
+**Agentic Workflow**
+Email: hello@aiagenticworkflow.ai
 Location: Auckland, New Zealand
 
 We take privacy matters seriously and will respond to all enquiries within 5 business days.`,
@@ -186,7 +186,7 @@ export default function PrivacyPage() {
         {/* Intro callout */}
         <div className="mb-12 p-5 rounded-xl border border-emerald-500/20 bg-emerald-500/5">
           <p className="text-sm text-[#d0d0d0] leading-relaxed">
-            We built JP Franklin FX to serve businesses — not to harvest data. This policy is written in plain English
+            We built Agentic Workflow to serve businesses — not to harvest data. This policy is written in plain English
             so you can understand exactly what we collect, why we collect it, and how you can control it.
           </p>
         </div>

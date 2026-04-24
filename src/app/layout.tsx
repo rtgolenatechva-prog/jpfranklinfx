@@ -11,10 +11,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
   title: {
     template: `%s | ${SITE_CONFIG.fullName}`,
-    default: `${SITE_CONFIG.fullName} | NZ AI Agency`,
+    default: `${SITE_CONFIG.fullName} | AI CRM & Receptionist`,
   },
   description:
-    "New Zealand's premier AI automation agency. Autonomous agent systems that replace manual workflows, scale revenue, and compound competitive advantage. Auckland-based, 30-day deployments.",
+    "AgenticAI CRM & AI Receptionist platform for plumbers, HVAC, and roofing businesses. Automate lead capture, inbound calls, and bookings. 5-day free trial.",
   keywords: SITE_CONFIG.keywords,
   authors: [{ name: 'JP Franklin', url: SITE_CONFIG.url }],
   creator: SITE_CONFIG.fullName,
@@ -23,23 +23,23 @@ export const metadata: Metadata = {
     locale: 'en_NZ',
     url: SITE_CONFIG.url,
     siteName: SITE_CONFIG.fullName,
-    title: `${SITE_CONFIG.fullName} | NZ AI Agency`,
+    title: `${SITE_CONFIG.fullName} | AI CRM & Receptionist`,
     description:
-      "We architect and deploy custom AI agent systems that eliminate manual workflows, accelerate revenue cycles, and give your business an unfair competitive advantage — live in 30 days.",
+      "AgenticAI CRM & AI Receptionist for service businesses. Stop missing calls. Automate lead capture and booking. Powered by bestreceptionist.ai.",
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: `${SITE_CONFIG.fullName} – NZ AI Agency`,
+        alt: `${SITE_CONFIG.fullName} – AI CRM & Receptionist`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${SITE_CONFIG.fullName} | NZ AI Agency`,
+    title: `${SITE_CONFIG.fullName} | AI CRM & Receptionist`,
     description:
-      "New Zealand's premier agentic AI agency. 30-day deployments. Results-guaranteed.",
+      "AgenticAI CRM & AI Receptionist for service businesses. 5-day free trial.",
     images: ['/og-image.png'],
   },
   robots: {

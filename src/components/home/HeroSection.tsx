@@ -53,7 +53,7 @@ export function HeroSection() {
           <motion.div variants={item}>
             <NeonBadge accent="emerald" size="md">
               <span className="animate-pulse-glow">⚡</span>
-              New Zealand&apos;s #1 Agentic AI Agency
+              AgenticAI CRM &amp; AI Receptionist Platform
             </NeonBadge>
           </motion.div>
 

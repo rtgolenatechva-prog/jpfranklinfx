@@ -9,47 +9,47 @@ import { cn } from '@/lib/utils'
 
 const PLANS = [
   {
-    id: 'foundation',
-    name: 'The Foundation Plan',
-    tagline: 'Best for solo-operators or single-location businesses needing a centralised CRM.',
+    id: 'starter-agent',
+    name: 'Starter Agent',
+    tagline: 'For solo-operators or single-location businesses automating lead capture from day one.',
     price: 97,
     accent: 'emerald' as const,
     popular: false,
+    stripeUrl: 'https://buy.stripe.com/5kQ8wPcPFfH6eCGgp2bjW0f',
     features: [
-      { label: 'Unified CRM', detail: 'Lead tracking, pipeline management, and calendar sync.' },
-      { label: 'Smart Lead Capture', detail: 'Automated forms and landing page builder.' },
-      { label: 'Standard Automation', detail: 'Appointment reminders and basic "Thank You" sequences.' },
-      { label: 'Email & SMS Marketing', detail: 'Essential tools for manual broadcast campaigns.' },
+      { label: 'Interactive Web Chatbot', detail: 'Autonomous chat agent trained on your business to capture and qualify leads.' },
+      { label: 'Basic GHL CRM Access', detail: 'Lead tracking, pipeline management, and calendar sync.' },
+      { label: 'Email Lead Notifications', detail: 'Instant alerts every time a new lead comes in.' },
     ],
   },
   {
-    id: 'pro',
-    name: 'The Conversational Pro',
-    tagline: 'For businesses ready to automate engagement and lead qualification.',
+    id: 'professional-receptionist',
+    name: 'Professional Receptionist',
+    tagline: 'For plumbers, HVAC, and roofing businesses ready to automate inbound calls and booking.',
     price: 297,
     accent: 'violet' as const,
     popular: true,
+    stripeUrl: 'https://buy.stripe.com/00weVd7vl1Qg3Y25KobjW0g',
     features: [
-      { label: 'Everything in Foundation', detail: 'All Foundation features included.' },
-      { label: '24/7 AI Chatbot', detail: 'Autonomous web agent trained on your business to answer FAQs and book appointments.' },
-      { label: 'Automated Nurture Campaigns', detail: 'Intelligent multi-channel Email/SMS sequences to warm leads over 30–90 days.' },
-      { label: 'Advanced Workflow Builder', detail: 'Up to 10 custom automated paths (e.g. "Missed Call Text-Back").' },
-      { label: 'White-Labeled Dashboard', detail: 'Your own branded portal for client/team access.' },
+      { label: 'All Starter Features', detail: 'Everything in Starter Agent, included.' },
+      { label: 'AI Voice Receptionist', detail: 'bestreceptionist.ai answers calls 24/7, qualifies leads, and books jobs.' },
+      { label: 'Real-time Call Qualification', detail: 'Every caller scored and routed instantly — no missed opportunities.' },
+      { label: 'Calendar Integration & Booking', detail: 'Jobs booked directly into your calendar without lifting a finger.' },
     ],
   },
   {
-    id: 'executive',
-    name: 'The Agentic Executive',
-    tagline: 'The full "Agent Driven Agency" experience for high-volume operations.',
+    id: 'unlimited-agentic',
+    name: 'Unlimited Agentic',
+    tagline: 'For agencies and high-volume operations deploying AI across unlimited sub-accounts.',
     price: 497,
     accent: 'cyan' as const,
     popular: false,
+    stripeUrl: 'https://buy.stripe.com/dRm28rbLB9il7ae7SwbjW0h',
     features: [
-      { label: 'Everything in Pro', detail: 'All Conversational Pro features included.' },
-      { label: 'AI Email Responder', detail: 'Reads inquiries, understands intent, and sends personalised replies autonomously.' },
-      { label: 'Unlimited AI Chatbots', detail: 'Deploy specific agents for Sales, Support, Recruiting, and more.' },
-      { label: 'SaaS Mode Enabled', detail: 'Rebill/markup AI and communication costs for your own clients.' },
-      { label: 'Priority Workflow Support', detail: 'Direct access to our technical team for custom CRM logic.' },
+      { label: 'All Professional Features', detail: 'Everything in Professional Receptionist, included.' },
+      { label: 'Unlimited SaaS Sub-accounts', detail: 'Deploy AgenticAI CRM for your own clients under your brand.' },
+      { label: 'Custom Funnel Development', detail: 'Done-for-you landing pages and lead funnels built around your operation.' },
+      { label: 'Advanced API & Zapier Automations', detail: 'Connect your entire stack with custom automation flows.' },
     ],
   },
 ]
@@ -226,12 +226,12 @@ export function HomePricingSection() {
 
                     {/* CTA */}
                     <GlowButton
-                      href="/audit"
+                      href={plan.stripeUrl}
                       variant={plan.popular ? 'cyan' : plan.accent === 'emerald' ? 'emerald' : 'cyan'}
                       size="md"
                       fullWidth
                     >
-                      {plan.popular ? 'Get Started — Most Popular' : 'Get Started'}
+                      {plan.popular ? 'Start Free Trial — Most Popular' : 'Start Free Trial'}
                       <ArrowRight size={15} />
                     </GlowButton>
                   </div>
@@ -292,7 +292,7 @@ export function HomePricingSection() {
 
         {/* Footer note */}
         <p className="mt-8 text-center text-xs text-[#505050] leading-relaxed">
-          All plans include onboarding, training, and 30-day optimisation support.{' '}
+          All plans include a 5-day free trial and onboarding support.{' '}
           <span className="whitespace-nowrap">Cancel anytime.</span>
         </p>
       </div>

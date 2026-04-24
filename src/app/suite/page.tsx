@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: `${SITE_CONFIG.url}/suite`,
   },
   openGraph: {
-    title: 'The AI Suite | JP Franklin FX – Agentic AI Division',
+    title: 'The AI Suite | Agentic Workflow',
     description:
       'Six agent systems, one competitive moat. Each system is custom-built, deeply integrated with your existing stack, and designed to operate 24/7 without supervision.',
     url: `${SITE_CONFIG.url}/suite`,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const suiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'JP Franklin FX AI Agent Suite',
+  name: 'Agentic Workflow AI Suite',
   description: 'Six custom AI agent systems for business automation',
   numberOfItems: 6,
   itemListElement: [

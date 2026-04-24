@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const offerSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'JP Franklin FX AI Agency Pricing',
+  name: 'Agentic Workflow Pricing — AgenticAI CRM',
   itemListElement: PRICING_TIERS.map((tier, i) => ({
     '@type': 'ListItem',
     position: i + 1,

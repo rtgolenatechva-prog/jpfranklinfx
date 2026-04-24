@@ -5,7 +5,7 @@ import { SITE_CONFIG } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
-  description: 'Terms governing your use of JP Franklin FX – Agentic AI Division\'s website and AI agent deployment services.',
+  description: 'Terms governing your use of Agentic Workflow\'s website, AgenticAI CRM, and AI Receptionist services.',
   alternates: {
     canonical: `${SITE_CONFIG.url}/terms`,
   },
@@ -17,7 +17,7 @@ const sections = [
   {
     id: 'agreement',
     title: '1. Agreement to Terms',
-    content: `By accessing or using the website at jpfranklinfx.co.nz ("Site") or engaging JP Franklin FX – Agentic AI Division ("we", "us", "our") for services, you ("Client", "you") agree to be bound by these Terms of Service ("Terms").
+    content: `By accessing or using the website at aiagenticworkflow.ai ("Site") or engaging Agentic Workflow ("we", "us", "our") for services, you ("Client", "you") agree to be bound by these Terms of Service ("Terms").
 
 These Terms apply to all visitors, users, and clients. If you are entering into these Terms on behalf of a company or organisation, you represent that you have the authority to do so.
 
@@ -26,7 +26,7 @@ If you do not agree to these Terms, do not use our Site or services. We reserve 
   {
     id: 'services',
     title: '2. Services',
-    content: `JP Franklin FX – Agentic AI Division provides custom AI agent system design, development, and deployment services for businesses ("Services"). Our offerings include, but are not limited to:
+    content: `Agentic Workflow provides custom AI agent system design, development, and deployment services for businesses ("Services"). Our offerings include, but are not limited to:
 
 - Lead intelligence and outreach automation agents
 - Revenue and proposal automation systems
@@ -170,15 +170,15 @@ If direct negotiation is unsuccessful, either party may refer the dispute to med
 
 **No waiver:** Our failure to enforce any provision does not constitute a waiver of that or any other provision.
 
-**Notices:** Notices under these Terms must be in writing and sent to hello@jpfranklinfx.co.nz or delivered to our registered address in Auckland, New Zealand.`,
+**Notices:** Notices under these Terms must be in writing and sent to hello@aiagenticworkflow.ai or delivered to our registered address in Auckland, New Zealand.`,
   },
   {
     id: 'contact',
     title: '14. Contact',
     content: `If you have questions about these Terms, please contact us:
 
-**JP Franklin FX – Agentic AI Division**
-Email: hello@jpfranklinfx.co.nz
+**Agentic Workflow**
+Email: hello@aiagenticworkflow.ai
 Location: Auckland, New Zealand
 
 We aim to respond to all legal enquiries within 5 business days.`,
@@ -226,8 +226,8 @@ export default function TermsPage() {
           <p className="text-sm text-[#d0d0d0] leading-relaxed">
             These Terms govern your use of our website and any AI agent services we provide. We have written
             them in plain English. If anything is unclear, email us at{' '}
-            <a href="mailto:hello@jpfranklinfx.co.nz" className="text-cyan-400 hover:text-cyan-300 transition-colors">
-              hello@jpfranklinfx.co.nz
+            <a href="mailto:hello@aiagenticworkflow.ai" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+              hello@aiagenticworkflow.ai
             </a>{' '}
             — we are happy to clarify.
           </p>

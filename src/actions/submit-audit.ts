@@ -83,8 +83,8 @@ function buildEmailHtml(data: AuditFormInput): string {
         <!-- CTA -->
         <tr>
           <td style="background:#0f0f0f;border:1px solid #1f2937;border-top:none;border-radius:0 0 12px 12px;padding:20px 24px;text-align:center;">
-            <a href="mailto:${data.email}?subject=Re: Your JP Franklin FX Strategy Audit" style="display:inline-block;background:linear-gradient(135deg,#10b981,#06b6d4);color:#fff;font-size:13px;font-weight:600;text-decoration:none;padding:10px 24px;border-radius:6px;">Reply to ${data.name} →</a>
-            <p style="margin:14px 0 0;font-size:11px;color:#4b5563;">Submitted via jpfranklinfx.co.nz/audit</p>
+            <a href="mailto:${data.email}?subject=Re: Your Agentic Workflow Strategy Audit" style="display:inline-block;background:linear-gradient(135deg,#10b981,#06b6d4);color:#fff;font-size:13px;font-weight:600;text-decoration:none;padding:10px 24px;border-radius:6px;">Reply to ${data.name} →</a>
+            <p style="margin:14px 0 0;font-size:11px;color:#4b5563;">Submitted via aiagenticworkflow.ai/audit</p>
           </td>
         </tr>
 
@@ -111,7 +111,7 @@ export async function submitAuditForm(
 
   try {
     const { error } = await resend.emails.send({
-      from: 'JP Agentic Workflow <onboarding@resend.dev>',
+      from: 'Agentic Workflow <onboarding@resend.dev>',
       to: SITE_CONFIG.email,
       replyTo: parsed.data.email,
       subject: `New Audit Request — ${parsed.data.company} (${parsed.data.revenue})`,
@@ -122,7 +122,7 @@ export async function submitAuditForm(
       console.error('[submitAuditForm] Resend error:', error)
       return {
         success: false,
-        message: 'Something went wrong. Please email us directly at hello@jpfranklinfx.co.nz',
+        message: 'Something went wrong. Please email us directly at info@aiagenticworkflow.ai',
       }
     }
 

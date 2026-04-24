@@ -7,12 +7,12 @@ import { SITE_CONFIG } from '@/lib/constants'
 export const metadata: Metadata = {
   title: 'About – The Vision',
   description:
-    'JP Franklin FX Agentic AI Division. Auckland-based AI agency founded on the belief that AI should work for your business — not the other way around. Our story, philosophy, and team.',
+    'Agentic Workflow — AgenticAI CRM & AI Receptionist platform for service businesses. Founded on the belief that AI should work for your business. Our story, philosophy, and team.',
   alternates: {
     canonical: `${SITE_CONFIG.url}/about`,
   },
   openGraph: {
-    title: 'About | JP Franklin FX – Agentic AI Division',
+    title: 'About | Agentic Workflow',
     description:
       'We believe AI should work for you. Our philosophy: Deployment Over Discovery, Results Over Reports, Systems Over Solutions, Trust Through Transparency.',
     url: `${SITE_CONFIG.url}/about`,

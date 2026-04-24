@@ -9,14 +9,14 @@ import { SITE_CONFIG } from '@/lib/constants'
 export const metadata: Metadata = {
   title: 'Free Strategy Audit',
   description:
-    'Book your free 45-minute AI Strategy Audit with JP Franklin FX. Walk away with a custom AI deployment roadmap tailored to your business — no obligation, no jargon.',
+    'Book your free 45-minute AI Strategy Audit with Agentic Workflow. Walk away with a custom AI deployment roadmap tailored to your business — no obligation, no jargon.',
   alternates: {
     canonical: `${SITE_CONFIG.url}/audit`,
   },
   openGraph: {
-    title: 'Free AI Strategy Audit | JP Franklin FX – Agentic AI Division',
+    title: 'Free AI Strategy Audit | Agentic Workflow',
     description:
-      '45 minutes. A custom AI deployment roadmap. Zero obligation. Auckland-based AI agency.',
+      '45 minutes. A custom AI deployment roadmap. Zero obligation. AgenticAI CRM & bestreceptionist.ai.',
     url: `${SITE_CONFIG.url}/audit`,
   },
 }
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
 const contactSchema = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
-  name: 'JP Franklin FX AI Strategy Audit',
+  name: 'Agentic Workflow AI Strategy Audit',
   description:
-    'Book a free 45-minute AI Strategy Audit with JP Franklin FX Agentic AI Division',
+    'Book a free 45-minute AI Strategy Audit with Agentic Workflow',
   url: `${SITE_CONFIG.url}/audit`,
   mainEntity: {
     '@type': 'Organization',
