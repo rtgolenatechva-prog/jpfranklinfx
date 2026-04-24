@@ -24,6 +24,7 @@ export interface PricingTier {
   description: string
   features: string[]
   cta: string
+  stripeUrl: string
   popular: boolean
   accent: 'emerald' | 'cyan'
 }

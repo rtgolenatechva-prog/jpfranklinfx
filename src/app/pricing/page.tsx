@@ -6,16 +6,16 @@ import { GridBackground } from '@/components/ui/GridBackground'
 import { SITE_CONFIG, PRICING_TIERS } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Pricing – Investment Tiers',
+  title: 'Pricing – AgenticAI CRM Plans',
   description:
-    'Transparent AI agency pricing. Launch ($3,000/mo), Scale ($6,000/mo), Dominate ($10,000/mo). No lock-ins. Cancel any quarter. Own your code and IP.',
+    'AgenticAI CRM pricing for plumbers, HVAC & roofing. Starter $97/mo, Professional Receptionist $297/mo, Unlimited Agentic $497/mo. All plans include a 5-day free trial.',
   alternates: {
     canonical: `${SITE_CONFIG.url}/pricing`,
   },
   openGraph: {
-    title: 'Pricing | JP Franklin FX – Agentic AI Division',
+    title: 'Pricing | AgenticAI CRM & bestreceptionist.ai',
     description:
-      'Transparent investment. Measurable returns. No retainer lock-ins. No surprise fees. Cancel any quarter if we don\'t deliver.',
+      'Flexible plans for service businesses. Starter $97/mo, Professional Receptionist $297/mo, Unlimited Agentic $497/mo. All plans include a 5-day free trial.',
     url: `${SITE_CONFIG.url}/pricing`,
   },
 }
@@ -69,10 +69,10 @@ export default function PricingPage() {
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-6 text-center">
           <SectionHeader
-            badge="Investment Tiers"
+            badge="All plans — 5-day free trial"
             headline={
               <>
-                Transparent Investment.{' '}
+                Pricing for{' '}
                 <span
                   style={{
                     background: 'linear-gradient(135deg, #10b981, #06b6d4)',
@@ -81,11 +81,11 @@ export default function PricingPage() {
                     backgroundClip: 'text',
                   }}
                 >
-                  Measurable Returns.
+                  AgenticAI CRM
                 </span>
               </>
             }
-            subheadline="No retainer lock-ins. No surprise fees. Cancel any quarter if we don't deliver. You own all code and IP."
+            subheadline="Built for plumbers, HVAC, and roofing businesses. Automate lead capture, calls, and bookings. Month-to-month — cancel any time."
             align="center"
           />
         </div>

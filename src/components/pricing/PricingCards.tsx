@@ -11,10 +11,10 @@ import { PRICING_TIERS } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 
 const ADD_ONS = [
-  { label: 'Custom model fine-tuning', price: 'from $2,500' },
-  { label: 'Additional API integrations', price: 'from $500' },
-  { label: 'Staff AI training workshop', price: 'from $1,500' },
-  { label: 'Priority deployment (7 days)', price: '$3,000 one-time' },
+  { label: 'Custom funnel build', price: 'from $500' },
+  { label: 'Additional GHL sub-account', price: 'from $97/mo' },
+  { label: 'Zapier / API integration setup', price: 'from $297 one-time' },
+  { label: 'Done-for-you onboarding', price: '$497 one-time' },
 ]
 
 export function PricingCards() {
@@ -107,7 +107,7 @@ export function PricingCards() {
                   {/* CTA */}
                   <div className="flex flex-col gap-3">
                     <GlowButton
-                      href="/audit"
+                      href={tier.stripeUrl}
                       variant={tier.accent}
                       size="md"
                       fullWidth
@@ -115,7 +115,7 @@ export function PricingCards() {
                       {tier.cta}
                     </GlowButton>
                     <p className="text-xs text-center text-[#606060]">
-                      No lock-in &middot; Cancel any quarter
+                      5-day free trial &middot; Cancel any time
                     </p>
                   </div>
                 </div>
@@ -148,9 +148,8 @@ export function PricingCards() {
         <ScrollReveal delay={0.15}>
           <div className="mt-10 text-center">
             <p className="text-sm text-[#606060] max-w-2xl mx-auto">
-              All tiers are month-to-month. You own all code and IP. We don&apos;t lock
-              you into proprietary platforms. If you don&apos;t see measurable results in
-              the first 30 days, we&apos;ll work for free until you do.
+              All plans include a 5-day free trial. Month-to-month &mdash; cancel any
+              time. Powered by AgenticAI CRM &amp; bestreceptionist.ai infrastructure.
             </p>
           </div>
         </ScrollReveal>
